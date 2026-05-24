@@ -17,4 +17,4 @@ alv_ad_transformer.ALV_AD_Transformer
 
 ## Notes
 
-These shell files are benchmark run configurations. They assume the benchmark runner is available as `scripts/run_benchmark.py` in the full experiment environment.
+These shell files are benchmark run configurations. The benchmark runner is included as `scripts/run_benchmark.py`.

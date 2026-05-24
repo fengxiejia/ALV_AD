@@ -35,6 +35,7 @@ ALV_AD/
 |   +-- results.png                       # Main benchmark results
 +-- requirements.txt                      # Exported development environment
 +-- scripts/
+|   +-- run_benchmark.py                  # Benchmark runner
 |   +-- multivariate_detection/           # Real-world benchmark run scripts
 +-- ts_benchmark/
     +-- baselines/
