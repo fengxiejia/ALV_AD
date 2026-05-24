@@ -1,4 +1,4 @@
-# ALV_AD: Latent-Stream Routing for Multivariate Time Series Anomaly Detection
+# ALV-AD: Adaptive Latent-View Reconstruction for Multivariate Time-Series Anomaly Detection
 
 **ALV_AD** is a PyTorch implementation of a reconstruction-based anomaly detection framework for multivariate time series. The model combines latent stream routing, residual vector quantization, and hybrid anomaly scoring to detect abnormal temporal patterns from unlabeled training data.
 
