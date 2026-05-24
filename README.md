@@ -38,7 +38,6 @@ ALV_AD/
 +-- ts_benchmark/
     +-- baselines/
     |   +-- alv_ad_transformer/           # Main ALV_AD implementation
-    |   +-- ialv_ad_transformer/          # Inverted-token variant
     +-- data/                             # Dataset loading utilities
     +-- evaluation/                       # Evaluation logic
     +-- models/                           # Model loading utilities
@@ -94,12 +93,6 @@ For benchmark-based loading, the main model entry is:
 
 ```text
 alv_ad_transformer.ALV_AD_Transformer
-```
-
-The inverted variant can be loaded with:
-
-```text
-ialv_ad_transformer.IALV_AD_Transformer
 ```
 
 ## Main Hyperparameters

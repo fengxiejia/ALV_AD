@@ -9,7 +9,7 @@ This directory contains curated run scripts for real-world multivariate time-ser
 - Excluded datasets: all `synthetic_*` simulation folders.
 - Included methods: `ALV_AD`, `CATCH`, `CrossAD`, `MtsCID`, `iTransformer`, `DCdetector`, `TimesNet`, `PatchTST`, `AnomalyTransformer`, `OmniAnomaly`, `TranAD`, `USAD`, `GDN`, `MTAD_GAT`, `DLinear`, `MEMTO`, and `IsolationForest`.
 
-The original private `mhc.sh` scripts have been renamed to `ALV_AD.sh`, and their model entry has been updated to:
+The ALV_AD run scripts use the following model entry:
 
 ```text
 alv_ad_transformer.ALV_AD_Transformer

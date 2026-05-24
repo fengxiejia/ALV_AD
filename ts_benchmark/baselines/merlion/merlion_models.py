@@ -5,37 +5,6 @@ from merlion.models.anomaly.isolation_forest import (
     IsolationForest,
     IsolationForestConfig,
 )
-from merlion.models.anomaly.vae import VAE, VAEConfig
-from merlion.models.anomaly.windstats import WindStats, WindStatsConfig
-from merlion.models.anomaly.autoencoder import AutoEncoder, AutoEncoderConfig
-from merlion.models.anomaly.dagmm import DAGMM, DAGMMConfig
-from merlion.models.anomaly.dbl import DynamicBaseline, DynamicBaselineConfig
-from merlion.models.anomaly.deep_point_anomaly_detector import (
-    DeepPointAnomalyDetector,
-    DeepPointAnomalyDetectorConfig,
-)
-from merlion.models.anomaly.lstm_ed import LSTMED, LSTMEDConfig
-from merlion.models.anomaly.random_cut_forest import (
-    RandomCutForest,
-    RandomCutForestConfig,
-)
-from merlion.models.anomaly.spectral_residual import (
-    SpectralResidual,
-    SpectralResidualConfig,
-)
-from merlion.models.anomaly.stat_threshold import StatThreshold, StatThresholdConfig
-from merlion.models.anomaly.zms import ZMS, ZMSConfig
-from merlion.models.anomaly.change_point.bocpd import BOCPD, BOCPDConfig
-from merlion.models.anomaly.forecast_based.arima import (
-    ArimaDetector,
-    ArimaDetectorConfig,
-)
-from merlion.models.anomaly.forecast_based.sarima import (
-    SarimaDetector,
-    SarimaDetectorConfig,
-)
-from merlion.models.anomaly.forecast_based.ets import ETSDetector, ETSDetectorConfig
-from merlion.models.anomaly.forecast_based.mses import MSESDetector, MSESDetectorConfig
 
 from sklearn.preprocessing import StandardScaler
 
@@ -165,29 +134,6 @@ def generate_model_factory(
 
 MERLION_MODELS = [
     (IsolationForest, IsolationForestConfig, {}),
-    (WindStats, WindStatsConfig, {}),
-    (VAE, VAEConfig, {}),
-    (AutoEncoder, AutoEncoderConfig, {}),
-    (DAGMM, DAGMMConfig, {}),
-    (DynamicBaseline, DynamicBaselineConfig, {}),
-    (DeepPointAnomalyDetector, DeepPointAnomalyDetectorConfig, {}),
-    (LSTMED, LSTMEDConfig, {}),
-    (RandomCutForest, RandomCutForestConfig, {}),
-    (SpectralResidual, SpectralResidualConfig, {}),
-    (StatThreshold, StatThresholdConfig, {}),
-    (ZMS, ZMSConfig, {}),
-    (BOCPD, BOCPDConfig, {}),
-]
-
-MERLION_STAT_MODELS = [  # The training set does not require labels
-    (ArimaDetector, ArimaDetectorConfig, {"max_forecast_steps": "max_forecast_steps"}),
-    (
-        SarimaDetector,
-        SarimaDetectorConfig,
-        {"max_forecast_steps": "max_forecast_steps"},
-    ),
-    (ETSDetector, ETSDetectorConfig, {"max_forecast_steps": "max_forecast_steps"}),
-    (MSESDetector, MSESDetectorConfig, {"max_forecast_steps": "max_forecast_steps"}),
 ]
 
 # Generate model factories for each model class, configuration class, and required parameters in MERLION-MODELS and add them to global variables
@@ -198,14 +144,4 @@ for model_class, config_class, required_args in MERLION_MODELS:
         config_class,
         required_args,
         allow_label_on_train=True,
-    )
-# The model name is dynamically pointed to our model
-# Generate model factories for each model class, configuration class, and required parameters in MERLION-STAT-MODELS and add them to global variables
-for model_class, config_class, required_args in MERLION_STAT_MODELS:
-    globals()[model_class.__name__] = generate_model_factory(
-        model_class.__name__,
-        model_class,
-        config_class,
-        required_args,
-        allow_label_on_train=False,
     )
