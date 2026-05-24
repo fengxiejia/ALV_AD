@@ -43,56 +43,30 @@ ALV_AD/
     +-- models/                           # Model loading utilities
 ```
 
-## Installation
+## Quick Start
 
-Create a Python environment and install the dependencies:
+### Installation
+
+Given a Python environment (note: this project is fully tested under Python 3.8), install the dependencies with the following command:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-The exported dependency file was generated from the development conda environment. If you prefer a lighter environment, the core model depends mainly on PyTorch, NumPy, pandas, scikit-learn, and common scientific Python packages.
+### Data Preparation
 
-## Data Preparation
+Prepare data. You can obtain the well pre-processed datasets from the provided OneDrive or BaiduCloud links. This may take some time, please wait patiently. Then place the downloaded data under the folder `./dataset`.
 
-Datasets are not included in this repository. Prepare your own multivariate time-series datasets and place them under a local `dataset/` directory or adapt the loaders in `ts_benchmark/data/`.
+### Train and Evaluate Model
 
-The detector expects training and test inputs as pandas `DataFrame` objects with timestamps or ordered indices and one column per variable.
+To see the model structure of ALV_AD, click [here](docs/overview.png).
 
-## Quick Start
+We provide the experiment scripts for ALV_AD and other baselines under the folder `./scripts/multivariate_detection`. For example, you can reproduce an experiment result as follows:
 
-Use the model directly from Python:
+```bash
+sh ./scripts/multivariate_detection/detect_label/MSL_script/ALV_AD.sh
 
-```python
-import pandas as pd
-
-from ts_benchmark.baselines.alv_ad_transformer import ALV_AD_Transformer
-
-train_df = pd.read_csv("dataset/train.csv", index_col=0)
-test_df = pd.read_csv("dataset/test.csv", index_col=0)
-
-model = ALV_AD_Transformer(
-    seq_len=100,
-    batch_size=128,
-    num_epochs=10,
-    d_model=128,
-    d_ff=256,
-    e_layers=2,
-    n_heads=8,
-    n_streams=6,
-    score_modes="recon_stage1",
-    hybrid_score_lambda=1.0,
-)
-
-model.detect_fit(train_df, test_df)
-score_components, anomaly_score = model.detect_score(test_df)
-predictions, primary_score = model.detect_label(test_df)
-```
-
-For benchmark-based loading, the main model entry is:
-
-```text
-alv_ad_transformer.ALV_AD_Transformer
+sh ./scripts/multivariate_detection/detect_score/MSL_script/ALV_AD.sh
 ```
 
 ## Main Hyperparameters
