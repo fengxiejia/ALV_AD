@@ -4,7 +4,7 @@
 
 **Environment:** Python 3.8+ | PyTorch 2.x
 
-This repository contains the main model code and benchmark integration for ALV_AD. Large datasets, experiment logs, and private run scripts are not included in this code release.
+This repository contains the main model code, benchmark integration, and curated real-world benchmark scripts for ALV_AD. Large datasets, experiment logs, and private search scripts are not included in this code release.
 
 ## Overview
 
@@ -33,6 +33,8 @@ ALV_AD/
 |   +-- overview.pdf                      # Original framework figure
 |   +-- overview.png                      # GitHub-friendly framework figure
 +-- requirements.txt                      # Exported development environment
++-- scripts/
+|   +-- multivariate_detection/           # Real-world benchmark run scripts
 +-- ts_benchmark/
     +-- baselines/
     |   +-- alv_ad_transformer/           # Main ALV_AD implementation
@@ -128,7 +130,7 @@ By default, ALV_AD uses `recon_stage1` as the primary score when available.
 
 ## Results
 
-This repository is a code release. Dataset-specific reproduction scripts and experiment logs are intentionally excluded. Please add your own experiment scripts or benchmark configuration files to reproduce results on your target datasets.
+This repository is a code release. Curated run scripts for real-world multivariate anomaly detection benchmarks are available under `scripts/multivariate_detection/`. Large datasets and experiment logs are intentionally excluded.
 
 ## Acknowledgement
 

@@ -1,0 +1,1 @@
+python ./scripts/run_benchmark.py --config-path "unfixed_detect_label_multi_config.json" --data-name-list "ASD_dataset_10.csv" --model-name "self_impl.MTAD_GAT" --model-hyper-params '{"lr":0.001,"seq_len":100,"batch_size":128,"num_epochs":5,"patience":3,"hidden_dim":96,"dropout":0.1,"anomaly_ratio":1.0}' --gpus 0 --num-workers 1 --timeout 60000 --save-path "label/MTAD_GAT"

@@ -1,0 +1,1 @@
+python ./scripts/run_benchmark.py --config-path "unfixed_detect_label_multi_config.json" --data-name-list "PSM.csv" --model-name "self_impl.CrossAD" --model-hyper-params '{"lr":0.001,"seq_len":100,"batch_size":128,"num_epochs":5,"patience":3,"d_model":128,"dropout":0.1,"kernels":[1,3,5],"anomaly_ratio":3.0}' --gpus 0 --num-workers 1 --timeout 60000 --save-path "label/CrossAD"

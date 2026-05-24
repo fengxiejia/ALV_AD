@@ -1,0 +1,1 @@
+python ./scripts/run_benchmark.py --config-path "unfixed_detect_label_multi_config.json" --data-name-list "Creditcard.csv" --model-name "self_impl.USAD" --model-hyper-params '{"lr":0.0001,"seq_len":100,"batch_size":128,"num_epochs":5,"patience":3,"hidden_dim":128,"latent_dim":32,"anomaly_ratio":2.0}' --gpus 0 --num-workers 1 --timeout 60000 --save-path "label/USAD"

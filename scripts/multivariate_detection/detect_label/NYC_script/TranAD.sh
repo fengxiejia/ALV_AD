@@ -1,0 +1,1 @@
+python ./scripts/run_benchmark.py --config-path "unfixed_detect_label_multi_config.json" --data-name-list "NYC.csv" --model-name "self_impl.TranAD" --model-hyper-params '{"lr":0.0001,"seq_len":100,"batch_size":128,"num_epochs":5,"patience":3,"d_model":128,"n_heads":4,"dropout":0.1,"anomaly_ratio":0.1}' --gpus 0 --num-workers 1 --timeout 60000 --save-path "label/TranAD"
