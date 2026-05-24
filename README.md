@@ -32,6 +32,7 @@ ALV_AD/
 +-- docs/
 |   +-- overview.pdf                      # Original framework figure
 |   +-- overview.png                      # GitHub-friendly framework figure
+|   +-- results.png                       # Main benchmark results
 +-- requirements.txt                      # Exported development environment
 +-- scripts/
 |   +-- multivariate_detection/           # Real-world benchmark run scripts
@@ -97,7 +98,13 @@ By default, ALV_AD uses `recon_stage1` as the primary score when available.
 
 ## Results
 
-This repository is a code release. Curated run scripts for real-world multivariate anomaly detection benchmarks are available under `scripts/multivariate_detection/`. Large datasets and experiment logs are intentionally excluded.
+Extensive experiments on 12 real-world datasets demonstrate that ALV_AD achieves state-of-the-art performance. We show the main results of all 12 real-world datasets below:
+
+<div align="center">
+  <img src="docs/results.png" alt="ALV_AD real-world benchmark results" width="100%">
+</div>
+
+Curated run scripts for real-world multivariate anomaly detection benchmarks are available under `scripts/multivariate_detection/`. Large datasets and experiment logs are intentionally excluded.
 
 ## Acknowledgement
 
