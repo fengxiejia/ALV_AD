@@ -56,7 +56,7 @@ pip install -r requirements.txt
 
 ### Data Preparation
 
-Prepare data. You can obtain the well pre-processed datasets from the provided OneDrive or BaiduCloud links. This may take some time, please wait patiently. Then place the downloaded data under the folder `./dataset`.
+Prepare data. You can obtain the well pre-processed datasets from [OneDrive](https://1drv.ms/u/c/801ce36c4ff3f93b/EVTDLHyvegpEn_Oxa6ZiuFIBjTsKk6m9JldUqWDqvrVCnQ?e=P2T3Vc). This may take some time, please wait patiently. Then place the downloaded data under the folder `./dataset`.
 
 ### Train and Evaluate Model
 
