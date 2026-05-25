@@ -117,4 +117,4 @@ If you find this repository useful, please cite the corresponding paper or proje
 
 ## License
 
-The license for this repository is to be added before public release.
+This project is released under the [MIT License](LICENSE). Third-party components retain their original licenses where noted in the source files.
