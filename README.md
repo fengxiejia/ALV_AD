@@ -36,6 +36,7 @@ ALV_AD/
 +-- requirements.txt                      # Exported development environment
 +-- scripts/
 |   +-- run_benchmark.py                  # Benchmark runner
+|   +-- run_benchmark_grouped_ablations.py # Grouped ablation runner
 |   +-- multivariate_detection/           # Real-world benchmark run scripts
 |   +-- robustness/                       # Robustness experiment utilities
 +-- ts_benchmark/

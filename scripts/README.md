@@ -19,6 +19,35 @@ alv_ad_transformer.ALV_AD_Transformer
 
 These shell files are benchmark run configurations. The benchmark runner is included as `scripts/run_benchmark.py`.
 
+## Grouped Ablation Runner
+
+`scripts/run_benchmark_grouped_ablations.py` launches grouped ALV-AD ablation benchmarks across datasets and GPUs. It reads each dataset's tuned `ALV_AD.sh` configuration, swaps in the requested `ablation_variant`, and writes one log plus one JSON metadata file per dataset-variant job.
+
+The default ablation variants are:
+
+```text
+full
+lsr_only
+rvq_only
+lsr_no_sinkhorn
+one_stage_vq
+uniform_rw
+```
+
+Example score-protocol run:
+
+```bash
+python scripts/run_benchmark_grouped_ablations.py \
+  --protocol detect_score \
+  --datasets CalIt2 MSL SWAT SMAP \
+  --variants full lsr_only rvq_only lsr_no_sinkhorn one_stage_vq uniform_rw \
+  --gpus 0 1 2 \
+  --seed 2021 \
+  --max-per-gpu 1 \
+  --save-root grouped_benchmark_score_alv_ad_final \
+  --log-dir final_ex/grouped_benchmark_score_alv_ad_final/logs
+```
+
 ## Robustness Scripts
 
 Additional robustness experiment utilities are available under `scripts/robustness/`.
