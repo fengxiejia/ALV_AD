@@ -37,6 +37,7 @@ ALV_AD/
 +-- scripts/
 |   +-- run_benchmark.py                  # Benchmark runner
 |   +-- multivariate_detection/           # Real-world benchmark run scripts
+|   +-- robustness/                       # Robustness experiment utilities
 +-- ts_benchmark/
     +-- baselines/
     |   +-- alv_ad_transformer/           # Main ALV_AD implementation
