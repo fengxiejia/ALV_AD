@@ -35,6 +35,7 @@ ALV_AD/
 |   +-- results.png                       # Main benchmark results
 +-- requirements.txt                      # Exported development environment
 +-- scripts/
+|   +-- build_label_free_threshold_figure.py # Label-free threshold figure builder
 |   +-- run_benchmark.py                  # Benchmark runner
 |   +-- run_benchmark_grouped_ablations.py # Grouped ablation runner
 |   +-- multivariate_detection/           # Real-world benchmark run scripts

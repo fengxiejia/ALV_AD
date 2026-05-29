@@ -19,6 +19,29 @@ alv_ad_transformer.ALV_AD_Transformer
 
 These shell files are benchmark run configurations. The benchmark runner is included as `scripts/run_benchmark.py`.
 
+## Label-Free Threshold Figure
+
+`scripts/build_label_free_threshold_figure.py` builds the label-free threshold analysis figure used for the paper's raw-score and thresholding study. It combines a synthetic-global score distribution panel with dataset-level Aff-F comparisons under `Best`, `TopK`, `POT`, and `SD` threshold rules.
+
+This corresponds to the PVLDB manuscript figure `label_free_threshold_analysis_synthetic` in the RQ3 thresholding discussion.
+
+Example:
+
+```bash
+python scripts/build_label_free_threshold_figure.py --single-column
+```
+
+This plotting utility uses `numpy`, `pandas`, and `matplotlib`, which are included in `requirements.txt`.
+
+Expected default inputs:
+
+```text
+final_ex/synthetic_threshold_score_groups_20260528/global_synthetic_threshold_scores.npz
+final_ex/threshold_selection_multimodel_native_window_msl_cicids_swat_nyc_20260529/threshold_multimodel_raw.csv
+```
+
+You can override them with `--score-npz` and `--threshold-csv`. Use `--no-copy-paper` if you only want to write the generated figure to `--out-dir` without updating a local paper directory.
+
 ## Grouped Ablation Runner
 
 `scripts/run_benchmark_grouped_ablations.py` launches grouped ALV-AD ablation benchmarks across datasets and GPUs. It reads each dataset's tuned `ALV_AD.sh` configuration, swaps in the requested `ablation_variant`, and writes one log plus one JSON metadata file per dataset-variant job.
